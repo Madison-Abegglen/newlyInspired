@@ -9,3 +9,38 @@ html {
   position: relative;
   overflow-y: hidden;
 }
+.txt {
+  border: solid red;
+  color: white;
+  text-shadow: 0 0 1px black;
+  font-family: 'Roboto', sans-serif;
+}
+.weather-p {
+  display: flex;
+  justify-content: flex-end;
+}
+.welcome-p {
+  display: flex;
+  justify-content: center;
+}
+.quote-p {
+  display: flex;
+  justify-content: center;
+}
+.todo-p{
+  display: flex; 
+  justify-content: flex-end;
+}
+.img-info-p {
+  display: flex;
+  justify-content: flex-start;
+}
+.top-r {
+  height: 20vh;
+}
+.center-r {
+  height: 60vh;
+}
+.bottom-r {
+  height: 20vh;
+}

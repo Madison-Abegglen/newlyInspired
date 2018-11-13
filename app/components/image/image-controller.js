@@ -6,7 +6,8 @@ let _is = new ImageService();
 
 function _draw(result) {
   let image = result;
-  document.getElementById('body').setAttribute('style', `background-image: url('${image.url}')`);
+  // document.getElementById('body').setAttribute('style', `background-image: url('${image.url}')`);
+  document.body.style.backgroundImage = `url('${image.url}')`;
 }
 
 export default class ImageController {
