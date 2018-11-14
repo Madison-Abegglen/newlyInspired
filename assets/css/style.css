@@ -11,21 +11,33 @@ html {
 }
 .txt {
   border: solid red;
-  color: white;
-  text-shadow: 0 0 1px black;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 .5px rgb(58, 58, 58);
   font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 .weather-p {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-start;
+}
+.weather-c {
+  text-align: end;
 }
 .welcome-p {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+}
+.welcome-c {
+  font-size: 5rem;
+  letter-spacing: .6rem;
+  font-weight: bolder;
 }
 .quote-p {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 .todo-p{
   display: flex; 
@@ -39,8 +51,12 @@ html {
   height: 20vh;
 }
 .center-r {
-  height: 60vh;
+  height: 50vh;
 }
 .bottom-r {
-  height: 20vh;
+  height: 30vh;
+}
+.w-icon {
+  margin-top: .1rem;
+  margin-right: .1rem;
 }
