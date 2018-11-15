@@ -4,8 +4,7 @@ let _is = new ImageService();
 //Your ImageService is a global class what can you do here to instantiate it?
 
 
-function _draw(result) {
-  let image = result;
+function _draw(image) {
   // document.getElementById('body').setAttribute('style', `background-image: url('${image.url}')`);
   document.body.style.backgroundImage = `url('${image.url}')`;
 }

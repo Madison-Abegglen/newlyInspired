@@ -10,7 +10,7 @@ html {
   overflow-y: hidden;
 }
 .txt {
-  border: solid red;
+  /* border: solid red; */
   color: rgb(255, 255, 255);
   text-shadow: 0 0 .5px rgb(58, 58, 58);
   font-family: 'Roboto', sans-serif;
@@ -18,26 +18,58 @@ html {
 }
 .weather-p {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  padding-left: 1rem;
+  height: 5rem;
+  background-color: rgb(141, 141, 141, .5);
 }
 .weather-c {
-  text-align: end;
+  text-align: center;
+}
+.w-icon {
+  margin-top: .1rem;
+  margin-right: .5rem;
 }
 .welcome-p {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  background-color: rgb(141, 141, 141, .5);
 }
 .welcome-c {
   font-size: 5rem;
   letter-spacing: .6rem;
   font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 40vw;
+  font-weight: bolder;
+  font-size: 4rem;
+  letter-spacing: .6rem;
+  text-align: center;
 }
 .quote-p {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  height: 20vh;
+  margin-top: 5vh;
+  background-color: rgb(141, 141, 141, .5);
+}
+.quote-c {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .todo-p{
   display: flex; 
@@ -51,12 +83,9 @@ html {
   height: 20vh;
 }
 .center-r {
-  height: 50vh;
+  margin-top: 15vh;
+  height: 35vh;
 }
 .bottom-r {
   height: 30vh;
-}
-.w-icon {
-  margin-top: .1rem;
-  margin-right: .1rem;
 }

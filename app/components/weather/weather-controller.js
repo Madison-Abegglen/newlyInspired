@@ -2,7 +2,7 @@ import WeatherService from "./weather-service.js";
 
 var weatherService = new WeatherService()
 
-function _drawWeather(wData) {
+function _drawW(wData) {
   console.log(`Weather Data:`, wData)
   let kTemp = wData.main.temp;
   let fTemp = Math.ceil((kTemp * (9 / 5)) - 459.67);
@@ -20,6 +20,6 @@ export default class WeatherController {
     this.getWeather()
   }
   getWeather() {
-    weatherService.getWeather(_drawWeather)
+    weatherService.getWeather(_drawW)
   }
 }

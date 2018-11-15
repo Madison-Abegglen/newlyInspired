@@ -5,16 +5,17 @@ let apiUrl = url + encodeURIComponent(url2);
 
 
 const quoteApi = axios.create({
-	baseURL: apiUrl,
-	timeout: 3000
+  baseURL: apiUrl,
+  timeout: 3000
 });
 
 
 export default class QuoteService {
-	getQuote(callWhenDone) {
-		console.log('looking for some good quotes')
-		quoteApi().then((res) => {
-			callWhenDone(res.data)
-		})
-	}
+  getQuote(_drawQ) {
+    console.log('looking for some good quotes')
+    quoteApi().then((res) => {
+      console.log("before you draw the quote data...", res.data)
+      _drawQ(res.data)
+    })
+  }
 }
