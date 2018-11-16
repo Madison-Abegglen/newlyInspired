@@ -1,12 +1,11 @@
 
-
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/YOURNAME/todos/',
-	timeout: 3000
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/madi/todos/',
+  timeout: 3000
 });
 
 function logError(e) {
-	console.log(e)
+  console.log(e)
 }
 
 
@@ -14,41 +13,41 @@ let todoList = []
 
 export default class TodoService {
 
-	getTodos(draw) {
-		console.log("Getting the Todo List")
-		todoApi.get('')
-			.then((res) => { // <-- WHY IS THIS IMPORTANT????
+  getTodos(draw) {
+    console.log("Getting the Todo List")
+    todoApi.get('')
+      .then((res) => { // <-- WHY IS THIS IMPORTANT????
+        draw(res.data)
+      })
+      .catch(logError)
+  }
 
-			})
-			.catch(logError)
-	}
+  addTodo(todo, getTodos) {
+    // WHAT IS THIS FOR???
+    todoApi.post('', todo)
+      .then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
+        getTodos();
+      })
+      .catch(logError)
+  }
 
-	addTodo(todo) {
-		// WHAT IS THIS FOR???
-		todoApi.post('', todo)
-			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
+  toggleTodoStatus(todoId) {
+    // MAKE SURE WE THINK THIS ONE THROUGH
+    //STEP 1: Find the todo by its index **HINT** todoList
 
-			})
-			.catch(logError)
-	}
+    var todo = {} ///MODIFY THIS LINE
 
-	toggleTodoStatus(todoId) {
-		// MAKE SURE WE THINK THIS ONE THROUGH
-		//STEP 1: Find the todo by its index **HINT** todoList
+    //STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
+    todoApi.put(todoId, todo)
+      .then(function (res) {
+        //DO YOU WANT TO DO ANYTHING WITH THIS?
+      })
+      .catch(logError)
+  }
 
-		var todo = {} ///MODIFY THIS LINE
+  removeTodo() {
+    // Umm this one is on you to write.... The method is a DELETE
 
-		//STEP 2: Change the completed flag to the opposite of what is is **HINT** todo.completed = !todo.completed
-		todoApi.put(todoId, todo)
-			.then(function (res) {
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
-			})
-			.catch(logError)
-	}
-
-	removeTodo() {
-		// Umm this one is on you to write.... The method is a DELETE
-
-	}
+  }
 
 }

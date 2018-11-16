@@ -13,7 +13,7 @@
 </head>
 
 <body id="body">
-  <div class="container-fluid">
+  <div id="container" class="container-fluid">
 
     <div class="row top-r">
       <div id="weather" class="col-3 offset-9 txt weather-p">
@@ -31,8 +31,7 @@
       </div>
 
       <div id="todo" class="col-3 txt todo-p">
-        <p>to-do</p>
-        <form onsubmit=""></form>
+        <button class="btn txt" onclick="app.controllers.todoController.showTodoForm()">to-do</button>
       </div>
     </div>
 
