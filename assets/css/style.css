@@ -10,7 +10,7 @@ html {
   overflow-y: hidden;
 }
 .txt {
-  border: solid red;
+  /* border: solid red; */
   color: rgb(255, 255, 255);
   text-shadow: 0 0 .5px rgb(58, 58, 58);
   font-family: 'Roboto', sans-serif;

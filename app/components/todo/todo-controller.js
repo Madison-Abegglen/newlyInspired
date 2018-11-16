@@ -5,10 +5,6 @@ var todoService = new TodoService
 let ogTemplate = ''
 
 // Use this getTodos function as your callback for all other edits
-function getTodos() {
-  //FYI DONT EDIT ME :)
-  todoService.getTodos(draw)
-}
 
 let todoModalTemplate = `
   <div class="row txt todo-p2">
@@ -27,16 +23,21 @@ let todoModalTemplate = `
   </div>
 `
 
+function getTodos() {
+  //FYI DONT EDIT ME :)
+  todoService.getTodos(draw)
+}
+
 /* <h4 class="txt todo-m-title">to-do's:</h4><button class="btn t-btn float-right"><i class="material-icons todo-m-icon">close</i></button><form></form> */
 
 function draw(todos) {
   //WHAT IS MY PURPOSE?
   //BUILD YOUR TODO TEMPLATE HERE
-  if (todos.length <= 0) {
+  if (todos.data.length == 0 || null) {
     let noTodosTemplate = `<p class="txt">no to-do's currently in your to-do list</p>`
     document.getElementById('todoList').innerHTML = noTodosTemplate;
   }
-  var template = ''
+  // var template = ''
   console.log("These are the to-do's:", todos);
   //DONT FORGET TO LOOP
 }
