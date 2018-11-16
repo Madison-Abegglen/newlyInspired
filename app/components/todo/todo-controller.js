@@ -1,8 +1,8 @@
 import TodoService from "./todo-service.js";
 
-
-
 var todoService = new TodoService
+
+let ogTemplate = ''
 
 // Use this getTodos function as your callback for all other edits
 function getTodos() {
@@ -32,6 +32,10 @@ let todoModalTemplate = `
 function draw(todos) {
   //WHAT IS MY PURPOSE?
   //BUILD YOUR TODO TEMPLATE HERE
+  if (todos.length <= 0) {
+    let noTodosTemplate = `<p class="txt">no to-do's currently in your to-do list</p>`
+    document.getElementById('todoList').innerHTML = noTodosTemplate;
+  }
   var template = ''
   console.log("These are the to-do's:", todos);
   //DONT FORGET TO LOOP
@@ -44,6 +48,7 @@ export default class TodoController {
   }
 
   showTodoForm() {
+    ogTemplate = document.getElementById('todo').innerHTML
     document.getElementById('todo').style.backgroundColor = "rgb(141, 141, 141, .6)";
     document.getElementById('todo').style.height = "22vh";
     document.getElementById('todo').style.maxWidth = "20vw";
@@ -55,13 +60,10 @@ export default class TodoController {
   }
 
   closeTodoForm() {
+    document.getElementById('todo').style.marginTop = "auto";
+    document.getElementById('todo').style.marginLeft = "auto";
     document.getElementById('todo').style.backgroundColor = "transparent";
-    document.getElementById('todo').style.height = auto;
-    document.getElementById('todo').style.maxWidth = auto;
-    document.getElementById('todo').style.marginTop = auto;
-    document.getElementById('todo').style.marginLeft = auto;
-    todoModalTemplate = ""
-    document.getElementById('todo').innerHTML = `<button class="btn txt" onclick="app.controllers.todoController.showTodoForm()">to-do</button>`
+    document.getElementById('todo').innerHTML = ogTemplate.toString();
   }
 
   // You will need four methods
