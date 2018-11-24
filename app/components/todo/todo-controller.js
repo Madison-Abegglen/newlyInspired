@@ -33,13 +33,21 @@ function getTodos() {
 function draw(todos) {
   //WHAT IS MY PURPOSE?
   //BUILD YOUR TODO TEMPLATE HERE
-  if (todos.data.length == 0 || null) {
+  console.log("These are the to-do's:", todos);
+
+  if (todos.data.length == 0 || todos.data.length == null) {
     let noTodosTemplate = `<p class="txt">no to-do's currently in your to-do list</p>`
     document.getElementById('todoList').innerHTML = noTodosTemplate;
   }
-  // var template = ''
-  console.log("These are the to-do's:", todos);
-  //DONT FORGET TO LOOP
+  var template = ''
+  todos.forEach(todo => {
+    template += `
+      <input type="checkbox" ${todo.checked ? "checked" : ""} name="todoCheckbox" />
+      <h5>${todo.description}</h5>
+      <button><i class="far fa-trash-alt"></i></button>
+    `
+  });
+  document.getElementById('todoList').innerHTML = template;
 }
 
 export default class TodoController {

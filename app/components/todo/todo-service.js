@@ -17,7 +17,8 @@ export default class TodoService {
     console.log("Getting the Todo List")
     todoApi.get('')
       .then((res) => { // <-- WHY IS THIS IMPORTANT????
-        draw(res.data)
+        console.log(res.data.data)
+        draw(res.data.data)
       })
       .catch(logError)
   }

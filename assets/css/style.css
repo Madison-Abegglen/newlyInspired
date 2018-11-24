@@ -111,6 +111,7 @@ html {
 }
 .t-btn {
   background: transparent !important;
+  transition: width 2s;
   /* justify-self: flex-end; */
   /* margin-top: .1rem; */
 }
